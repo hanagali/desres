@@ -1,0 +1,46 @@
+
+--------------------------SPASS-START-----------------------------
+Input Problem:
+1[0:Inp] ||  -> eq(size(nill),z)*.
+2[0:Inp] ||  -> eq(plus(z,u),u)*.
+3[0:Inp] ||  -> eq(append(nill,u),u)*.
+4[0:Inp] ||  -> eq(plus(s(u),v),s(plus(u,v)))*.
+5[0:Inp] ||  -> eq(size(cons(u,v)),plus(s(z),size(v)))*.
+6[0:Inp] ||  -> equal(plus(size(nill),size(u)),size(append(nill,u)))**.
+7[0:Inp] ||  -> equal(plus(size(u),size(v)),size(append(u,v)))**.
+8[0:Inp] ||  -> eq(append(cons(u,v),w),cons(u,append(v,w)))*.
+9[0:Inp] || equal(plus(size(cons(skc5,skc4)),size(skc3)),size(append(cons(skc5,skc4),skc3)))** -> .
+ This is a first-order Horn problem containing equality.
+ This is a problem that has, if any, a non-trivial domain model.
+ The conjecture is ground.
+ Axiom clauses: 8 Conjecture clauses: 1
+ Inferences: IEqR=1 ISpR=1 ISpL=1 IORe=1 
+ Reductions: RFRew=1 RBRew=1 RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RFSub=1 RBSub=1 
+ Extras    : Input Saturation, No Selection, No Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
+ Precedence: cons > append > plus > size > s > eq > skc5 > skc4 > skc3 > skc2 > skc1 > skc0 > z > nill
+ Ordering  : KBO
+Processed Problem:
+
+Worked Off Clauses:
+
+Usable Clauses:
+1[0:Inp] ||  -> eq(size(nill),z)*.
+3[0:Inp] ||  -> eq(append(nill,u),u)*.
+2[0:Inp] ||  -> eq(plus(z,u),u)*.
+4[0:Inp] ||  -> eq(plus(s(u),v),s(plus(u,v)))*.
+7[0:Inp] ||  -> equal(plus(size(u),size(v)),size(append(u,v)))**.
+5[0:Inp] ||  -> eq(size(cons(u,v)),plus(s(z),size(v)))*.
+8[0:Inp] ||  -> eq(append(cons(u,v),w),cons(u,append(v,w)))*.
+SPASS V 3.9 
+SPASS beiseite: Proof found.
+Problem: /tmp/webspass-webform_2020-10-10_20:24:44_32215l.txt 
+SPASS derived 0 clauses, backtracked 0 clauses, performed 0 splits and kept 8 clauses.
+SPASS allocated 72540 KBytes.
+SPASS spent	0:00:00.04 on the problem.
+		0:00:00.01 for the input.
+		0:00:00.01 for the FLOTTER CNF translation.
+		0:00:00.00 for inferences.
+		0:00:00.00 for the backtracking.
+		0:00:00.00 for the reduction.
+
+--------------------------SPASS-STOP------------------------------

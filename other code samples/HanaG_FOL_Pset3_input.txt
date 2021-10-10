@@ -1,0 +1,68 @@
+begin_problem(FOL).
+list_of_descriptions.
+name({*Pset3: FOL*}).
+author({*Hana Galijasevic*}).
+status(unsatisfiable).
+description({*Prove that the length of the concatenation of two strings is equal to the sum of the lengths of the individual strings.*}).
+end_of_list.
+
+list_of_symbols.
+	functions[(nill, 0), (z, 0), (plus, 2), (append, 2), (cons, 2), (s,1), (size, 1) ].
+predicates[(eq, 2)].
+end_of_list.
+
+%AXIOMS DESCRIBING FUNCTIONALITY OF APPEND, PLUS, AND SIZE FUNCTIONS
+
+list_of_formulae(axioms).    
+	%PLUS
+	formula(forall([x],
+		eq(plus(z, x), x)
+        )).
+	formula(forall([x, y],
+		eq(plus(s(x), y), s(plus(x, y)))
+	)).
+	
+
+	% SIZE
+	formula(eq(size(nill), z)). 
+        %|nill| = 0
+	
+	formula(forall([a, u],
+		eq(size(cons(a, u)), 
+                       plus(s(z), size(u))
+		))).
+
+	%APPEND
+	formula(forall([L1],
+		eq(append(nill, L1), L1)
+	)).
+	formula(forall([a, u, L2],
+		eq(append(cons(a, u), L2), cons(a, append(u, L2)))
+	)).
+
+%given base case 
+formula(forall([L2],
+equal(size(append(nill, L2)), plus(size(nill), size(L2)))
+)).
+
+formula(forall([a, L1, L2], 
+
+equal(plus(size(L1), size(L2)), 
+                   size(append(L1, L2)))
+
+)) .
+
+
+end_of_list.
+
+list_of_formulae(conjectures).
+
+formula(forall([a, L1, L2],
+equal(plus(size(cons(a, L1)), size(L2)), size(append(cons(a, L1), L2)))
+)).
+% Show that the induction step is valid
+
+
+end_of_list.
+end_problem.
+
